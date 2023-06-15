@@ -7,16 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AE.Application.Modules.Ship.Commands
+namespace AE.Application.Modules.ShipModule.Commands.CommandModels
 {
-    public class CreateShipCommand : IRequest<BaseResponse>
+    public class UpdateShipCommand : IRequest<BaseResponse>
     {
         [Required]
-        public string Name { get; set; }
-        [Required]
-        public double Longtitude { get; set; }
-        [Required]
-        public double Latitude { get; set; }
+        public Guid Id { get; set; }
         [Required]
         public double Velocity { get; set; }
     }

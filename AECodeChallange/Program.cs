@@ -1,5 +1,4 @@
 using AE.Application;
-using AE.Application.Modules.Ship.Commands;
 using AE.Data;
 using AECodeChallange;
 using MediatR;
@@ -18,6 +17,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddMediatrApplication();
 
 builder.Services.AddDbContext<AECCodeChallangeContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("AppConnection")));
+builder.Services.AddDIRegister();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

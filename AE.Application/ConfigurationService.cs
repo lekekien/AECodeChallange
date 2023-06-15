@@ -8,6 +8,7 @@ namespace AE.Application
         public static void AddMediatrApplication(this IServiceCollection services)
         {
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
     }
 }

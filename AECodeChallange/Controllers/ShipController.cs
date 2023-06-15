@@ -1,6 +1,5 @@
 ﻿using AE.Application.CommonModels;
-using AE.Application.Modules.Ship.Commands;
-using AE.Application.Modules.Ship.Commands.CommandModels;
+using AE.Application.Modules.ShipModule.Commands.CommandModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
