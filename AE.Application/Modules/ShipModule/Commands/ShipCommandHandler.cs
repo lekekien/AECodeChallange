@@ -12,7 +12,9 @@ using System.Threading.Tasks;
 
 namespace AE.Application.Modules.ShipModule.Commands
 {
-    public class ShipCommandHandler : IRequestHandler<CreateShipCommand, BaseResponse>, IRequestHandler<UpdateShipCommand,BaseResponse>
+    public class ShipCommandHandler : IRequestHandler<CreateShipCommand, BaseResponse>
+                                    , IRequestHandler<UpdateShipCommand,BaseResponse>
+                                    , IRequestHandler<DeleteShipCommand,BaseResponse>
     {
         private IRepository<Ship> _shipRepository;
         private IMapper _mapper;
@@ -62,6 +64,17 @@ namespace AE.Application.Modules.ShipModule.Commands
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        public async Task<BaseResponse> Handle(DeleteShipCommand request, CancellationToken cancellationToken)
+        {
+            var shipExist = _shipRepository.FindOne(x => x.Id == request.Id);
+            if(shipExist == null)
+            {
+                throw new Exception("Ship is not existing !");
+            }
+            await _shipRepository.Delete(shipExist, cancellationToken);
+            return new BaseResponse { Message = "Success" };
         }
     }
 }

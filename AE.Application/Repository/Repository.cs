@@ -42,9 +42,20 @@ namespace AE.Application.Repository
             return entity;
         }
 
+        public async Task<int> Delete(T entity, CancellationToken cancellationToken)
+        {
+           _dbContext.Set<T>().Remove(entity);
+           return await _dbContext.SaveChangesAsync(cancellationToken);
+        }
+
         public T FindOne(Func<T, bool> predicate)
         {
             return  _dbContext.Set<T>().Where(predicate).FirstOrDefault();
+        }
+
+        public IQueryable<T> GetAll()
+        {
+            return _dbContext.Set<T>();
         }
     }
 }

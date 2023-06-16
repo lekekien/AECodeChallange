@@ -1,25 +1,17 @@
-﻿using AE.Application.CommonModels;
-using MediatR;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AE.Application.Modules.ShipModule.Commands.CommandModels
+namespace AE.Application.Modules.ShipModule.Queries.ResponseModels
 {
-    public class UpdateShipCommand : IRequest<BaseResponse>
+    public class ShipResponseModel
     {
-        [Required]
         public Guid Id { get; set; }
-        [Required]
         public string Name { get; set; }
-        [Required]
         public double Longtitude { get; set; }
-        [Required]
         public double Latitude { get; set; }
-        [Required]
         public double Velocity { get; set; }
     }
 }

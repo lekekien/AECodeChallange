@@ -14,5 +14,7 @@ namespace AE.Application.Repository
         T FindOne(Func<T, bool> predicate);
         Task SaveChangeAsync(CancellationToken cancellationToken);
         Task<bool> IsExist(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken);
+        Task<int> Delete(T entity, CancellationToken cancellationToken);
+        IQueryable<T> GetAll();
     }
 }

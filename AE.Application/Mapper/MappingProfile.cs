@@ -1,4 +1,6 @@
-﻿using AE.Application.Modules.ShipModule.Commands.CommandModels;
+﻿using AE.Application.Modules.PortModule.Queries.ResponseModels;
+using AE.Application.Modules.ShipModule.Commands.CommandModels;
+using AE.Application.Modules.ShipModule.Queries.ResponseModels;
 using AE.Data.Entities;
 using AutoMapper;
 using System;
@@ -15,6 +17,9 @@ namespace AE.Application.Mapper
         {
             CreateMap<CreateShipCommand, Ship>();
             CreateMap<UpdateShipCommand, Ship>();
+
+            CreateMap<Ship, ShipResponseModel>();
+            CreateMap<Port, ClosestPortModel>();
         }
     }
 }
