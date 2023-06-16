@@ -49,6 +49,7 @@ namespace AE.Application.Modules.ShipModule.Commands
 
         public async Task<BaseResponse> Handle(UpdateShipCommand request, CancellationToken cancellationToken)
         {
+            await new UpdateShipCommandValidator().ValidateAndThrowExceptionAsync(request, cancellationToken);
             var existingData =  _shipRepository.FindOne(ship => ship.Id == request.Id);
             if (existingData == null)
             {
