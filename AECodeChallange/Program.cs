@@ -1,3 +1,4 @@
+using AE.Api.Middlewares;
 using AE.Application;
 using AE.Data;
 using AECodeChallange;
@@ -27,6 +28,7 @@ builder.Services.AddDbContext<AECCodeChallangeContext>(options => options.UseNpg
 builder.Services.AddDIRegister();
 var app = builder.Build();
 
+app.UseMiddleware<ExeptionMiddleware>();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

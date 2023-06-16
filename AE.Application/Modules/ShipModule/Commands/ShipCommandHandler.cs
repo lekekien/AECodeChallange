@@ -1,8 +1,11 @@
 ﻿using AE.Application.CommonModels;
 using AE.Application.Modules.ShipModule.Commands.CommandModels;
+using AE.Application.Modules.ShipModule.Commands.Validators;
 using AE.Application.Repository;
+using AE.Common.Extentions;
 using AE.Data.Entities;
 using AutoMapper;
+using FluentValidation;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -26,6 +29,7 @@ namespace AE.Application.Modules.ShipModule.Commands
         }
         public async Task<BaseResponse> Handle(CreateShipCommand request, CancellationToken cancellationToken)
         {
+            await new CreateShipCommandValidator().ValidateAndThrowExceptionAsync(request, cancellationToken);
             try
             {
                 var shipEntity = _mapper.Map<Ship>(request);
