@@ -14,11 +14,11 @@ using System.Threading.Tasks;
 
 namespace AE.Application.Modules.ShipModule.Queries
 {
-    public class ShipQueryHandlers : IRequestHandler<GetAllShipQuery, List<ShipResponseModel>>
+    public class ShipQueryHandler : IRequestHandler<GetAllShipQuery, List<ShipResponseModel>>
     {
         private IRepository<Ship> _shipRepository;
         private IMapper _mapper;
-        public ShipQueryHandlers(IRepository<Ship> shipRepository, IMapper mapper) 
+        public ShipQueryHandler(IRepository<Ship> shipRepository, IMapper mapper) 
         { 
             _shipRepository = shipRepository;
             _mapper = mapper;
