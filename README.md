@@ -35,7 +35,7 @@ Main project have 5 sub-project inside
 #Demo
 - Swagger
 ![image](https://github.com/lekekien/AECodeChallange/assets/40720438/7f01435c-2e9a-47fa-a85e-39fe99989e7a)
--Response from API
+- Response from API
 
 ![image](https://github.com/lekekien/AECodeChallange/assets/40720438/b1f8775f-945a-4f7c-af90-4d45ca1a7208)
 
