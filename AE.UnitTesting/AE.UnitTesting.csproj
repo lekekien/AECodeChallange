@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AECodeChallange\AE.Api.csproj" />
+    <ProjectReference Include="..\AE.Api\AE.Api.csproj" />
   </ItemGroup>
 
 </Project>
