@@ -15,6 +15,7 @@ namespace AE.Application.Modules.ShipModule.Commands.Validators
             RuleFor(x => x.Name).NotEmpty().WithMessage("Name is required !");
             RuleFor(x => x.Latitude).InclusiveBetween(-90,90).WithMessage("Latitude must be a number between -90 and 90 !");
             RuleFor(x => x.Longtitude).InclusiveBetween(-180,180).WithMessage("Longtitude between -180 and 180 !");
+            RuleFor(x => x.Velocity).NotEmpty().WithMessage("Velocity is required !");
         }
     }
 }
